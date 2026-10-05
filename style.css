@@ -1,0 +1,967 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d1117;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+.github-area {
+    position: relative;
+    width: 700px;
+    height: 280px;
+    overflow: hidden;
+    border: 3px solid #30363d;
+    border-radius: 10px;
+    background: #071525;
+    image-rendering: pixelated;
+    transition: background 1s ease;
+}
+
+
+/* =========================================
+   CÉU
+========================================= */
+
+.ceu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78%;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #050b18 0%,
+            #0b1930 55%,
+            #162d48 100%
+        );
+
+    transition: background 1s ease;
+}
+
+
+/* =========================================
+   LUA
+========================================= */
+
+.lua {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    top: 35px;
+    right: 90px;
+
+    background: #f4f1c9;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 0 0 4px rgba(244, 241, 201, 0.15),
+        0 0 25px rgba(244, 241, 201, 0.35);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.lua::before {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    left: 12px;
+    top: 14px;
+
+    background: #d8d5b0;
+
+    box-shadow:
+        20px 8px 0 #ddd9b6,
+        28px 30px 0 #d5d2a9,
+        9px 35px 0 #e1deb9;
+}
+
+
+/* =========================================
+   SOL
+========================================= */
+
+.sol {
+    position: absolute;
+
+    width: 62px;
+    height: 62px;
+
+    top: 32px;
+    right: 85px;
+
+    background: #ffd83d;
+
+    border: 4px solid #f1b82e;
+
+    box-shadow:
+        0 0 0 5px rgba(255, 216, 61, 0.15),
+        0 0 25px rgba(255, 216, 61, 0.45);
+
+    opacity: 0;
+
+    transform: scale(0.5);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* =========================================
+   ESTRELAS
+========================================= */
+
+.estrelas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+.estrela {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 5px #ffffff;
+
+    animation: brilho 2s infinite alternate;
+}
+
+.estrela1 {
+    left: 10%;
+    top: 20%;
+}
+
+.estrela2 {
+    left: 25%;
+    top: 38%;
+}
+
+.estrela3 {
+    left: 40%;
+    top: 18%;
+}
+
+.estrela4 {
+    left: 53%;
+    top: 50%;
+}
+
+.estrela5 {
+    left: 69%;
+    top: 28%;
+}
+
+.estrela6 {
+    left: 80%;
+    top: 55%;
+}
+
+.estrela7 {
+    left: 88%;
+    top: 18%;
+}
+
+.estrela8 {
+    left: 16%;
+    top: 58%;
+}
+
+@keyframes brilho {
+
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   NUVENS
+========================================= */
+
+.nuvens {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.nuvem {
+    position: absolute;
+
+    width: 125px;
+    height: 30px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 0 rgba(180, 200, 215, 0.7);
+
+    border-radius: 2px;
+}
+
+.nuvem span {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.nuvem span:nth-child(1) {
+    width: 42px;
+    height: 38px;
+    left: 12px;
+    top: -20px;
+}
+
+.nuvem span:nth-child(2) {
+    width: 52px;
+    height: 48px;
+    left: 43px;
+    top: -28px;
+}
+
+.nuvem span:nth-child(3) {
+    width: 35px;
+    height: 34px;
+    right: 12px;
+    top: -16px;
+}
+
+.nuvem1 {
+    top: 60px;
+    left: 70px;
+    animation: nuvem1 20s linear infinite;
+}
+
+.nuvem2 {
+    top: 110px;
+    left: 390px;
+    transform: scale(0.75);
+    animation: nuvem2 25s linear infinite;
+}
+
+@keyframes nuvem1 {
+
+    from {
+        transform: translateX(-180px);
+    }
+
+    to {
+        transform: translateX(760px);
+    }
+
+}
+
+@keyframes nuvem2 {
+
+    from {
+        transform: translateX(-400px) scale(0.75);
+    }
+
+    to {
+        transform: translateX(700px) scale(0.75);
+    }
+
+}
+
+
+/* =========================================
+   CENÁRIO
+========================================= */
+
+.cenario {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 55%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CHÃO
+========================================= */
+
+.chao {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #4d9b45 0px,
+            #4d9b45 13px,
+            #79502f 13px,
+            #79502f 42px,
+            #4b321f 42px,
+            #4b321f 65px
+        );
+
+    transition: background 1s ease;
+}
+
+.chao::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20px;
+
+    width: 100%;
+    height: 8px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(40, 25, 15, 0.45) 35px,
+            rgba(40, 25, 15, 0.45) 50px
+        );
+}
+
+
+/* =========================================
+   ÁRVORE
+========================================= */
+
+.arvore {
+    position: absolute;
+
+    left: 105px;
+    bottom: 45px;
+
+    width: 125px;
+    height: 165px;
+}
+
+
+/* =========================================
+   TRONCO
+========================================= */
+
+.tronco {
+    position: absolute;
+
+    left: 48px;
+    bottom: 0;
+
+    width: 30px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #57351e 0px,
+            #714326 8px,
+            #85502d 18px,
+            #5a361f 18px,
+            #5a361f 30px
+        );
+
+    border-left: 4px solid #412615;
+    border-right: 4px solid #3d2415;
+}
+
+.tronco::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 55px;
+
+    left: -22px;
+    top: -35px;
+
+    background: #60391f;
+
+    transform: rotate(-40deg);
+}
+
+.tronco::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 55px;
+
+    right: -22px;
+    top: -40px;
+
+    background: #60391f;
+
+    transform: rotate(40deg);
+}
+
+
+/* =========================================
+   COPA DA ÁRVORE
+========================================= */
+
+.copa {
+    position: absolute;
+
+    background:
+        linear-gradient(
+            90deg,
+            #164d2a 0px,
+            #236b37 20px,
+            #2f8140 45px,
+            #205f32 70px,
+            #154525 90px
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        inset -8px -8px 0 rgba(0, 0, 0, 0.12);
+
+    transition: background 1s ease;
+}
+
+.copa1 {
+    width: 90px;
+    height: 65px;
+
+    left: 3px;
+    top: 35px;
+}
+
+.copa2 {
+    width: 90px;
+    height: 70px;
+
+    left: 37px;
+    top: 55px;
+}
+
+.copa3 {
+    width: 78px;
+    height: 65px;
+
+    left: 25px;
+    top: 0;
+}
+
+.copa::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: #3c9148;
+
+    left: 17px;
+    top: 12px;
+
+    box-shadow:
+        25px 20px 0 #28783a,
+        48px 5px 0 #368942,
+        55px 35px 0 #1b5a2e,
+        5px 42px 0 #246c35;
+}
+
+
+/* =========================================
+   MORCEGO
+========================================= */
+
+.morcego {
+    position: absolute;
+
+    /*
+       AGORA O MORCEGO FICA
+       ACIMA DA ÁRVORE
+    */
+    left: 250px;
+    top: -95px;
+
+    width: 70px;
+    height: 42px;
+
+    animation: voar 5s ease-in-out infinite;
+
+    transition: opacity 1s ease;
+
+    z-index: 15;
+}
+
+
+/* CORPO */
+
+.corpo {
+    position: absolute;
+
+    width: 15px;
+    height: 25px;
+
+    left: 28px;
+    top: 9px;
+
+    background: #151515;
+
+    border-radius: 4px;
+}
+
+
+/* CABEÇA */
+
+.corpo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+    height: 15px;
+
+    left: -1px;
+    top: -7px;
+
+    background: #151515;
+}
+
+
+/* OLHOS */
+
+.corpo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    left: 3px;
+    top: -3px;
+
+    background: #d84b4b;
+
+    box-shadow:
+        7px 0 0 #d84b4b;
+}
+
+
+/* ASAS */
+
+.asa {
+    position: absolute;
+
+    width: 32px;
+    height: 27px;
+
+    top: 10px;
+
+    background: #171717;
+}
+
+.asa.esquerda {
+    left: 0;
+
+    clip-path: polygon(
+        100% 0,
+        70% 30%,
+        45% 10%,
+        25% 35%,
+        0 20%,
+        12% 100%,
+        100% 80%
+    );
+}
+
+.asa.direita {
+    right: 0;
+
+    clip-path: polygon(
+        0 0,
+        30% 30%,
+        55% 10%,
+        75% 35%,
+        100% 20%,
+        88% 100%,
+        0 80%
+    );
+}
+
+
+/* =========================================
+   VOO DO MORCEGO
+   ELE CRUZA O CÉU ACIMA DA ÁRVORE
+========================================= */
+
+@keyframes voar {
+
+    0% {
+        transform: translate(-40px, 20px);
+    }
+
+    20% {
+        transform: translate(20px, -5px);
+    }
+
+    40% {
+        transform: translate(100px, 15px);
+    }
+
+    60% {
+        transform: translate(180px, -10px);
+    }
+
+    80% {
+        transform: translate(260px, 20px);
+    }
+
+    100% {
+        transform: translate(330px, 0);
+    }
+
+}
+
+
+/* =========================================
+   ABAJUR
+========================================= */
+
+.abajur {
+    position: absolute;
+
+    right: 50px;
+    bottom: 28px;
+
+    width: 110px;
+    height: 190px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    image-rendering: pixelated;
+
+    transition: transform 0.15s ease;
+}
+
+
+/* =========================================
+   CÚPULA
+========================================= */
+
+.cobertura {
+    position: absolute;
+
+    left: 8px;
+    top: 15px;
+
+    width: 94px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #707780 0px,
+            #aeb4ba 25px,
+            #d4d7da 50px,
+            #979da3 75px,
+            #646b73 94px
+        );
+
+    clip-path: polygon(
+        18% 0,
+        82% 0,
+        100% 100%,
+        0 100%
+    );
+
+    border-bottom: 7px solid #4b5158;
+
+    transition:
+        background 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.cobertura::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 8px;
+
+    background: #454b52;
+}
+
+
+/* =========================================
+   HASTE
+========================================= */
+
+.haste {
+    position: absolute;
+
+    left: 51px;
+    top: 75px;
+
+    width: 10px;
+    height: 78px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4b5157,
+            #aeb5bb,
+            #555c63
+        );
+}
+
+
+/* =========================================
+   BASE
+========================================= */
+
+.base {
+    position: absolute;
+
+    left: 18px;
+    bottom: 10px;
+
+    width: 74px;
+    height: 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b7bdc2,
+            #777e85
+        );
+
+    border-radius: 3px;
+
+    border-bottom: 5px solid #484e54;
+}
+
+
+/* =========================================
+   LUZ
+========================================= */
+
+.luz {
+    position: absolute;
+
+    left: -20px;
+    top: 55px;
+
+    width: 150px;
+    height: 135px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 220, 110, 0.55) 0%,
+            rgba(255, 220, 110, 0.25) 30%,
+            rgba(255, 220, 110, 0) 70%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   ABAJUR ACESO
+========================================= */
+
+body.ligado .github-area {
+    background: #78a9d1;
+}
+
+body.ligado .ceu {
+    background:
+        linear-gradient(
+            to bottom,
+            #3e8dcc,
+            #8cc4eb 70%,
+            #b7d9ed
+        );
+}
+
+body.ligado .sol {
+    opacity: 1;
+    transform: scale(1);
+}
+
+body.ligado .lua {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+body.ligado .estrelas {
+    opacity: 0;
+}
+
+body.ligado .nuvens {
+    opacity: 1;
+}
+
+body.ligado .chao {
+    background:
+        linear-gradient(
+            to bottom,
+            #61ad4e 0px,
+            #61ad4e 13px,
+            #825631 13px,
+            #825631 42px,
+            #523621 42px,
+            #523621 65px
+        );
+}
+
+body.ligado .copa {
+    background:
+        linear-gradient(
+            90deg,
+            #1b602f 0px,
+            #2f873e 20px,
+            #42a34c 45px,
+            #28763a 70px,
+            #18552a 90px
+        );
+}
+
+body.ligado .morcego {
+    opacity: 0;
+}
+
+body.ligado .cobertura {
+    background:
+        linear-gradient(
+            90deg,
+            #d6b54d,
+            #ffe28a,
+            #d3ac3f
+        );
+
+    box-shadow:
+        0 0 12px rgba(255, 220, 100, 0.7);
+}
+
+body.ligado .luz {
+    opacity: 1;
+}
+
+
+/* =========================================
+   EFEITO DE CLIQUE
+========================================= */
+
+.abajur:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .github-area {
+        width: 95%;
+        height: 280px;
+    }
+
+    .abajur {
+        right: 25px;
+    }
+
+    .arvore {
+        left: 60px;
+    }
+
+    .morcego {
+        left: 180px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .arvore {
+        left: 25px;
+    }
+
+    .morcego {
+        left: 120px;
+    }
+
+    .abajur {
+        right: 10px;
+    }
+
+    .sol,
+    .lua {
+        right: 45px;
+    }
+
+}
+```
